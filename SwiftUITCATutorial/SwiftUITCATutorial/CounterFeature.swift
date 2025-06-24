@@ -31,6 +31,9 @@ struct CounterFeature {
         case timer
     }
     
+    @Dependency(\.continuousClock) var clock
+    @Dependency(\.numberFact) var numberFact
+    
     var body: some ReducerOf<Self> {
         Reduce { state, action in
             switch action {
